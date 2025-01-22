@@ -105,10 +105,10 @@ const googleAuthCallback = async (req, res) => {
     });
 
     // Redirect to frontend with token
-    res.redirect('http://localhost:3000/home');
+    res.redirect(`${process.env.CLIENT_URL}/home`);
   } catch (error) {
     console.error('Error in Google OAuth callback:', error);
-    res.redirect('http://localhost:3000/');
+    res.redirect(`${process.env.CLIENT_URL}/`);
   }
 };
 
