@@ -1,0 +1,21 @@
+[
+    { "interest": "Sky Diving", "category": "Adventure" },
+    { "interest": "Fishing", "category": "Outdoor" },
+    { "interest": "Religious Places", "category": "Spiritual" },
+    { "interest": "Libraries", "category": "Educational" },
+    { "interest": "Mountain Biking", "category": "Adventure" },
+    { "interest": "Museums", "category": "Cultural" },
+    { "interest": "Yoga Retreats", "category": "Wellness" },
+    { "interest": "Hiking", "category": "Outdoor" },
+    { "interest": "Camping", "category": "Outdoor" },
+    { "interest": "Cooking Classes", "category": "Culinary" },
+    { "interest": "Art Galleries", "category": "Cultural" },
+    { "interest": "Wine Tasting", "category": "Culinary" },
+    { "interest": "Wildlife Watching", "category": "Outdoor" },
+    { "interest": "Surfing", "category": "Adventure" },
+    { "interest": "Scuba Diving", "category": "Adventure" },
+    { "interest": "Photography Tours", "category": "Cultural" },
+    { "interest": "Historical Tours", "category": "Cultural" },
+    { "interest": "Spa Retreats", "category": "Wellness" }
+  ]
+  
