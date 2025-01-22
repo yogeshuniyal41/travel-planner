@@ -97,7 +97,7 @@ try {
     res.cookie('token', token, {
       httpOnly: true,
       sameSite: 'None',
-	secure:true
+	secure:true ,
       maxAge: 3600000,
     });
 
