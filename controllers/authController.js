@@ -33,52 +33,7 @@ const registerUser = async (req, res) => {
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
   console.log(req.body)
-  try {
-    const url = 'https://sky-scanner3.p.rapidapi.com/flights/search-multi-city';
-const options = {
-  method: 'POST',
-  headers: {
-    'x-rapidapi-key': '59fd955d2cmsh3f8c6f41bde5e37p11a94ejsnf4d03cfef4ab',
-    'x-rapidapi-host': 'sky-scanner3.p.rapidapi.com',
-    'Content-Type': 'application/json'
-  },
-  body: {
-    market: 'US',
-    locale: 'en-US',
-    currency: 'USD',
-    adults: 1,
-    children: 0,
-    infants: 0,
-    cabinClass: 'economy',
-    stops: [
-      'direct',
-      '1stop',
-      '2stops'
-    ],
-    sort: 'cheapest_first',
-    airlines: [-32753, -32695],
-    flights: [
-      {
-        fromEntityId: 'BCN',
-        toEntityId: 'NUE',
-        departDate: '2025-01-21'
-      },
-      {
-        fromEntityId: 'PARI',
-        toEntityId: 'MSYA',
-        departDate: '2025-01-28'
-      }
-    ]
-  }
-};
-
-try {
-	const response = await fetch(url, options);
-	const result = await response.text();
-	console.log(result);
-} catch (error) {
-	console.error(error);
-}
+	try{
     const user = await User.findOne({ email });
     if (!user) {
       return res.status(400).json({ message: 'Invalid email or password' });
@@ -161,6 +116,7 @@ const logoutUser = (req, res) => {
     res.clearCookie('token', {
       httpOnly: true,
       sameSite: 'None',
+	    secure:true
     });
 
     req.session = null; // Clear session data (for OAuth sessions)
