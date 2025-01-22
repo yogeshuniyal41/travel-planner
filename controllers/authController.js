@@ -51,7 +51,8 @@ const loginUser = async (req, res) => {
     // Set cookie with token
     res.cookie('token', token, {
       
-      sameSite: 'Strict',
+      sameSite: 'None',
+      secure:true,
       maxAge: 3600000,
     });
 
@@ -91,7 +92,8 @@ const googleAuthCallback = async (req, res) => {
     // Set cookie with JWT token
     res.cookie('token', token, {
       httpOnly: true,
-      sameSite: 'Strict',
+      sameSite: 'None',
+      secure:true,
       maxAge: 3600000,
     });
 
@@ -115,6 +117,7 @@ const logoutUser = (req, res) => {
     res.clearCookie('token', {
       httpOnly: true,
       sameSite: 'Strict',
+      secure:true
     });
 
     req.session = null; // Clear session data (for OAuth sessions)
