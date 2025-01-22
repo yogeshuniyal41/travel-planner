@@ -33,13 +33,11 @@ const registerUser = async (req, res) => {
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
   console.log(req.body)
-<<<<<<< HEAD
-  try
-   { const user = await User.findOne({ email });
-=======
+  
+
 	try{
     const user = await User.findOne({ email });
->>>>>>> 85d3dfc039aa84d9b805e8222be7e766b34824b1
+
     if (!user) {
       return res.status(400).json({ message: 'Invalid email or password' });
     }
@@ -55,15 +53,12 @@ const loginUser = async (req, res) => {
 
     // Set cookie with token
     res.cookie('token', token, {
-<<<<<<< HEAD
-      
-      sameSite: 'None',
-      secure:true,
-=======
+
+
       httpOnly: true,
       sameSite: 'None',
-	secure:true ,
->>>>>>> 85d3dfc039aa84d9b805e8222be7e766b34824b1
+	  secure:true ,
+
       maxAge: 3600000,
     });
 
@@ -104,11 +99,8 @@ const googleAuthCallback = async (req, res) => {
     res.cookie('token', token, {
       httpOnly: true,
       sameSite: 'None',
-<<<<<<< HEAD
-      secure:true,
-=======
 	    secure:true,
->>>>>>> 85d3dfc039aa84d9b805e8222be7e766b34824b1
+ 
       maxAge: 3600000,
     });
 
@@ -131,13 +123,9 @@ const logoutUser = (req, res) => {
     // Clear the JWT cookie
     res.clearCookie('token', {
       httpOnly: true,
-<<<<<<< HEAD
-      sameSite: 'Strict',
-      secure:true
-=======
       sameSite: 'None',
 	    secure:true
->>>>>>> 85d3dfc039aa84d9b805e8222be7e766b34824b1
+
     });
 
     req.session = null; // Clear session data (for OAuth sessions)
