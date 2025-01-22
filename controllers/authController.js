@@ -136,7 +136,7 @@ const googleAuthCallback = async (req, res) => {
     // Set cookie with JWT token
     res.cookie('token', token, {
       httpOnly: true,
-      sameSite: 'Strict',
+      sameSite: 'None',
       maxAge: 3600000,
     });
 
