@@ -96,7 +96,7 @@ try {
     // Set cookie with token
     res.cookie('token', token, {
       httpOnly: true,
-      sameSite: 'Strict',
+      sameSite: 'None',
       maxAge: 3600000,
     });
 
@@ -159,7 +159,7 @@ const logoutUser = (req, res) => {
     // Clear the JWT cookie
     res.clearCookie('token', {
       httpOnly: true,
-      sameSite: 'Strict',
+      sameSite: 'None',
     });
 
     req.session = null; // Clear session data (for OAuth sessions)
