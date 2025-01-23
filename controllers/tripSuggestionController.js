@@ -13,7 +13,7 @@ const getTripSuggestions = async (req, res) => {
     // Fetch trip suggestions in parallel
     const [flightSuggestions, hotelSuggestions, placesSuggestions] = await Promise.all([
       fetchFlights(fromCity, toCity, startDate, endDate, adults),
-      fetchHotels(destination, startDate, endDate),
+      fetchHotels(destination, startDate, endDate,adults),
       fetchPlaces(destination, interests),
     ]);
 

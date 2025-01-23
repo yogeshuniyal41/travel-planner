@@ -13,6 +13,7 @@ const fetchFlights = async (fromCity, toCity, startDate, endDate, adults) => {
         arrival_id: toCity,
         outbound_date: startDate,
         return_date: endDate,
+        adults:adults,
         currency: 'INR',
         hl: 'en',
         api_key: process.env.SERPAPI_KEY,
@@ -83,7 +84,7 @@ const fetchHotels = async (destination, startDate, endDate) => {
       q: `${destination} Resorts`,
       check_in_date: startDate,
       check_out_date: endDate,
-      adults: 1,
+      adults: adults,
       currency: 'INR',
       gl: 'us',
       hl: 'en',
@@ -118,6 +119,7 @@ const fetchPlaces = async (destination, interests) => {
       q: `best places for ${interests} in ${destination}`,
       hl: 'en',
       location: destination,
+      
       api_key: process.env.SERPAPI_KEY,
     };
 
