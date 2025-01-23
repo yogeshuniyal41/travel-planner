@@ -105,10 +105,10 @@ const googleAuthCallback = async (req, res) => {
     });
 
     // Redirect to frontend with token
-    res.redirect(`https://travel-planner-1-6o7r.onrender.com/home`);
+    res.redirect(`http://travel-planner-1-6o7r.onrender.com/`);
   } catch (error) {
     console.error('Error in Google OAuth callback:', error);
-    res.redirect(`https://travel-planner-1-6o7r.onrender.com/`);
+    res.redirect(`http://travel-planner-1-6o7r.onrender.com/`);
   }
 };
 
