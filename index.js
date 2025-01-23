@@ -10,6 +10,7 @@ const tripRoutes = require('./routes/tripSuggestionRoutes.js'); // CommonJS requ
 const authenticateJWT = require('./middleware/authMiddleware');
 const authRouter = require('./routes/authRoutes.js'); // CommonJS require
 const router = require('./routes/tripSuggestionRoutes.js');
+const path=require('path');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const app = express();
