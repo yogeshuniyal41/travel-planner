@@ -17,10 +17,7 @@ const app = express();
 
 
 // Middleware
-app.use(express.static(path.join(__dirname, 'build')));
 
-app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));});
 
 // Use cookie-parser middleware
 app.use(cookieParser());
@@ -49,7 +46,10 @@ app.use(passport.session());
 // Use authentication routes
 app.use('/auth', authRouter);
 app.use('/search', router);
+app.use(express.static(path.join(__dirname, 'build')));
 
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));});
 // Protected route example
 
 
