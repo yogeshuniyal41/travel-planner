@@ -63,7 +63,7 @@ const loginUser = async (req, res) => {
     });
 
     // Send success response (frontend handles redirect)
-    res.status(200).json({ message: 'Login successful' });
+    res.status(200).json({ message: 'Login successful' , user:user.email});
   } catch (err) {
     res.status(500).json({ message: 'Internal server error' });
   }

@@ -52,6 +52,7 @@ const AuthForm = () => {
       if(response.message=='Login successful'){
         window.alert('Logged in successfully');
         setError('');
+        window.localStorage.setItem('user',response.user.email)
         navigate('/home'); // Navigate after successful login
       } else {
         window.alert(response.data?.message || 'Login failed');

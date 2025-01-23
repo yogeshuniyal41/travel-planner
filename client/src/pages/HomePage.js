@@ -12,7 +12,8 @@ const HomePage = () => {
     const checkAuth = async () => {
       try {
         const response = await fetch(`${BASE_URL}/auth/me`, {
-          credentials: 'include', // Send cookies with the request
+          credentials: 'include',
+          method:'GET' // Send cookies with the request
         });
         console.log(response);
         if (response.ok) { // Corrected from `response.OK` to `response.ok`

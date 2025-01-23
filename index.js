@@ -16,7 +16,10 @@ const app = express();
 
 
 // Middleware
+app.use(express.static(path.join(__dirname, 'build')));
 
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));});
 
 // Use cookie-parser middleware
 app.use(cookieParser());
@@ -49,7 +52,7 @@ app.use('/search', router);
 // Protected route example
 
 
-
+console.log(process.env.CLIENT_URL)
 
 // Connect to MongoDB and start server
 mongoose
