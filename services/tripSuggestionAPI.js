@@ -77,7 +77,7 @@ const fetchFlights = async (fromCity, toCity, startDate, endDate, adults) => {
  * @param {string} endDate - End date of the stay (YYYY-MM-DD).
  * @returns {Promise<Array>} - Array of hotel suggestions.
  */
-const fetchHotels = async (destination, startDate, endDate) => {
+const fetchHotels = async (destination, startDate, endDate,adults) => {
   try {
     const hotelParams = {
       engine: 'google_hotels',
